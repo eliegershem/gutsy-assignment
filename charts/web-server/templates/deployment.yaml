@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: IfNotPresent
+        command: ["./server"]
+        args: ["{{ .Values.redis.host }}:{{ .Values.redis.port }}"]
+        env:
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.redis.secretName }}
+              key: redis-password
+        ports:
+        - containerPort: 9090

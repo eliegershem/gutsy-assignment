@@ -1,0 +1,8 @@
+image:
+  repository: localhost:5000/web-server
+  tag: latest
+
+redis:
+  host: redis-master  # Redis service name
+  port: 6379
+  secretName: redis  # Name of the secret containing Redis password
