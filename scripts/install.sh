@@ -14,7 +14,7 @@ cd ../..
 
 # Create kind cluster using external config
 echo "Creating kind cluster..."
-kind create cluster --name gutsy --config=kind/cluster-config.yaml
+kind create cluster --name gutsy --config=./kind/cluster-config.yaml
 
 # Load the image into kind cluster
 echo "Loading image into kind cluster..."

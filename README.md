@@ -2,7 +2,7 @@
 This repository contains the gutsy assignment project, a comprehensive setup for a web server with SSL encryption, load balancing, and caching using Kubernetes and Helm charts.
 
 ## Prerequisites
-Before installing the project, you need to install the required tools. Run the following commands:
+Before installing the project, you need to install the required tools. This project is compatible with Ubuntu 22. Run the following commands:
 
 ```bash
 chmod +x scripts/install-tools.sh
