@@ -1,0 +1,27 @@
+architecture: standalone
+
+auth:
+  enabled: true
+
+master:
+  persistence:
+    enabled: false  # Disable persistence since we're loading from ConfigMap
+    
+  extraVolumeMounts:
+    - name: custom-redis-data
+      mountPath: /data/data.rdb
+      subPath: data.rdb
+
+  extraVolumes:
+    - name: custom-redis-data
+      configMap:
+        name: redis-data
+
+  command: ["redis-server"]
+  args:
+    - "--dbfilename"
+    - "data.rdb"
+    - "--dir"
+    - "/data"
+    - "--protected-mode"
+    - "no"

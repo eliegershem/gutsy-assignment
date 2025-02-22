@@ -1,0 +1,3 @@
+# Binary & certificates outputs
+services/web-server/server
+certs/*
