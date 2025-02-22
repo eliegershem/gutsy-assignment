@@ -27,4 +27,4 @@ spec:
         ports:
         - containerPort: 9090
         resources:
-{{ toYaml .Values.resources | . }}
+          {{- toYaml .Values.resources | nindent 10 }}

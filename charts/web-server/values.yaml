@@ -1,4 +1,4 @@
-image:
+image: # Image to use for the deployment
   repository: localhost:5000/web-server
   tag: latest
 
@@ -7,8 +7,9 @@ redis:
   port: 6379
   secretName: redis  # Name of the secret containing Redis password
 
-replicas: 1
-resources:
+replicas: 1 # Number of replicas to deploy
+
+resources: # Resources to request and limit for the deployment
   requests:
     memory: "64Mi"
     cpu: "100m"
