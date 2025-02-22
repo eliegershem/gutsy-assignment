@@ -7,10 +7,11 @@ Before installing the project, you need to install the required tools. This proj
 ```bash
 chmod +x scripts/install-tools.sh
 ./scripts/install-tools.sh
-
-# After tools installation, either:
-# 1. Log out and log back in, OR
-# 2. Run these commands in your current terminal:
+```
+After tools installation, either:
+1. Log out and log back in, OR
+2. Run these commands in your current terminal:
+```bash
 newgrp docker
 source ~/.bashrc
 ```
