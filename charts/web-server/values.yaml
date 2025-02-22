@@ -6,3 +6,12 @@ redis:
   host: redis-master  # Redis service name
   port: 6379
   secretName: redis  # Name of the secret containing Redis password
+
+replicas: 1
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "128Mi"
+    cpu: "250m"

@@ -61,4 +61,4 @@ helm install web-server ./charts/web-server -n web-server -f ./values/web-server
 
 # Add entry to hosts file
 echo "Adding entry to /etc/hosts..."
-echo "127.0.0.1 gutsy.local" | sudo tee -a /etc/hosts
+echo "127.0.0.1 web-server.local" | sudo tee -a /etc/hosts

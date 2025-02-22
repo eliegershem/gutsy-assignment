@@ -23,7 +23,7 @@ chmod +x scripts/install.sh
 ./scripts/install.sh
 ```
 
-This script will build the server executable, create a Docker image, set up a kind cluster, load the image into the cluster, install the NGINX Ingress Controller, install Redis, generate TLS certificates, and install the web-server Helm chart.
+This script will build the server executable, create a Docker image, set up a kind cluster, load the image into the cluster, install the NGINX Ingress Controller, install Redis, generate TLS certificates, and install the web-server Helm chart. The compiled server executable can be found under `services/web-server/` with the name `server`.
 
 ## Uninstallation
 To uninstall the project, follow these steps:
@@ -38,6 +38,6 @@ This script will remove the kind cluster.
 ## Testing
 After deploying the project, you can test it by running the following curl command in your terminal:
 ```bash
-curl -k https://gutsy.local/api/v1/music-albums\?key\=100
+curl -k https://web-server.local/api/v1/music-albums\?key\=100
 ```
 You should see the response {"album":"Iron Maiden"}. If you encounter any issues, check the logs of the web server and other components to identify the problem.

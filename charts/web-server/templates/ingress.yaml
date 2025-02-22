@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - web-server.local
+    - {{ .Release.Name }}.local
     secretName: web-server-tls
   rules:
-  - host: web-server.local
+  - host: {{ .Release.Name }}.local
     http:
       paths:
       - path: /
